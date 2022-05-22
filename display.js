@@ -6,7 +6,7 @@ const unselected = "rgb(0, 0, 0)";
 
 function drawAnd(x, y, out) {
     clearCanvas();
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(100, 100);
@@ -33,7 +33,7 @@ function drawAnd(x, y, out) {
 }
 function drawOr(x, y, out, drawInputs) {
     clearCanvas();
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(100, 100);
@@ -61,7 +61,7 @@ function drawOr(x, y, out, drawInputs) {
 function drawXor(x, y, out) {
     clearCanvas();
     drawOr(true, true, true);
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(42, 65);
@@ -75,7 +75,7 @@ function drawXor(x, y, out) {
 }
 function drawNot(x, out) {
     clearCanvas();
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
@@ -90,7 +90,7 @@ function drawNot(x, out) {
     
         // input
         ctx.beginPath();
-        if(out) {ctx.strokeStyle = active;}
+        if(x === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(42, 65);
         ctx.lineTo(100, 65);
@@ -109,7 +109,7 @@ function drawNot(x, out) {
 }
 function drawNor(x, y, out, drawInputs) {
     clearCanvas();
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(100, 100);
@@ -132,7 +132,7 @@ function drawNor(x, y, out, drawInputs) {
 }
 function drawNand(x, y, out) {
     clearCanvas();
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(100, 100);
@@ -161,7 +161,7 @@ function drawNand(x, y, out) {
 function drawXnor(x, y, out) {
     clearCanvas();
     drawNor(true, true, true);
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.moveTo(42, 65);
@@ -176,18 +176,18 @@ function drawXnor(x, y, out) {
     }
 }
 function clearCanvas() {
-    var c = document.getElementById("circle");
+    var c = document.getElementById("gateCanvas");
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.beginPath();
 }
 function xorInput(x, y) {
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         // x input
         ctx.beginPath();
-        if(x) {ctx.strokeStyle = active;}
+        if(x === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,80);
         ctx.lineTo(50,72);
@@ -197,7 +197,7 @@ function xorInput(x, y) {
 
         // y input
         ctx.beginPath();
-        if(y) {ctx.strokeStyle = active;}
+        if(y === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,50);
         ctx.lineTo(50,58);
@@ -207,12 +207,12 @@ function xorInput(x, y) {
     }
 }
 function andInput(x, y) {
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         // x input
         ctx.beginPath();
-        if(x) {ctx.strokeStyle = active;}
+        if(x === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,80);
         ctx.lineTo(50,72);
@@ -222,7 +222,7 @@ function andInput(x, y) {
 
         // y input
         ctx.beginPath();
-        if(y) {ctx.strokeStyle = active;}
+        if(y === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,50);
         ctx.lineTo(50,58);
@@ -232,12 +232,12 @@ function andInput(x, y) {
     }
 }
 function orInput(x, y) {
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         // x input
         ctx.beginPath();
-        if(x) {ctx.strokeStyle = active;}
+        if(x === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,80);
         ctx.lineTo(50,72);
@@ -247,7 +247,7 @@ function orInput(x, y) {
 
         // y input
         ctx.beginPath();
-        if(y) {ctx.strokeStyle = active;}
+        if(y === 'true') {ctx.strokeStyle = active;}
         else {ctx.strokeStyle = deactive;}
         ctx.moveTo(50,50);
         ctx.lineTo(50,58);
@@ -257,7 +257,7 @@ function orInput(x, y) {
     }
 }
 function norOutput(out) {
-    var canvas = document.getElementById('circle');
+    var canvas = document.getElementById('gateCanvas');
     if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.beginPath();

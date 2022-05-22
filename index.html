@@ -5,16 +5,27 @@
     <title>Logic Gate App</title>
     <script src="gates.js"></script>
     <script src="display.js"></script>
+    <script src="calc.js"></script>
 </head>
 <body>
     <h1>Logic Gates</h1>
-    <button onclick="drawAnd(true, true, true);">And</button>
-    <button onclick="drawOr(true, true, true, true);">Or</button>
-    <button onclick="drawXor(true, true, true, false);">Xor</button>
-    <button onclick="drawNot(true, true);">Not</button>
-    <button onclick="drawNor(true, true, true, true);">Nor</button>
-    <button onclick="drawNand(true, true, true);">Nand</button>
-    <button onclick="drawXnor(true, true, true);">Xnor</button>
-    <canvas id="circle" width="500" height="500"></canvas>
+    <button onclick="drawAnd(input1(), input2(), andCalc());">And</button>
+    <button onclick="drawOr(input1(), input2(), orCalc(), true);">Or</button>
+    <button onclick="drawXor(input1(), input2(), xorCalc(), false);">Xor</button>
+    <button onclick="drawNot(input1(), notCalc());">Not</button>
+    <button onclick="drawNor(input1(), input2(), norCalc(), true);">Nor</button>
+    <button onclick="drawNand(input1(), input2(), nandCalc());">Nand</button>
+    <button onclick="drawXnor(input1(), input2(), xnorCalc());">Xnor</button>
+    <canvas id="gateCanvas" width="500" height="500"></canvas>
+
+    <label>Input 1: <select id="input1">
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select></label>
+    
+    <label>Input 2: <select id="input2">
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select></label>
 </body>
 </html>
