@@ -1,7 +1,5 @@
 // defines a function for each basic gate
 
-// possible drag and drop implementation for gates
-
 function or(x, y) {
     if(x === 'true' || y === 'true') {
         return true;
@@ -21,7 +19,12 @@ function xor(x, y) {
     return false;
 }
 function not(x) {
-    return !x;
+    if(x === 'true') {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 function nor(x, y) {
     if(x === 'false' && y === 'false') {

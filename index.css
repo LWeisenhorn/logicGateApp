@@ -1,0 +1,45 @@
+body {
+    overflow: hidden;
+}
+
+#inputs, #gateButtons, #gateCanvas {
+    border: 1px solid blue;
+}
+#inputs {
+    margin-bottom: 20px;
+}
+#gateCanvas {
+    margin-left: 10vw;
+    margin-top: 50px;
+}
+#controls > #inputs > h2, #controls > #gateButtons > h2 {
+    font-size: 15px;
+}
+#controls > #inputs > h2 {
+    margin-bottom: 0px;
+}
+#controls > #inputs > h3 {
+    font-size: 12px;
+    margin-top: 3px;
+    padding-top: 0px;
+}
+table, td, th {
+    border:1px solid black;
+    border-collapse: collapse;
+}
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:gainsboro;
+}

@@ -3,29 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Logic Gate App</title>
-    <script src="gates.js"></script>
-    <script src="display.js"></script>
-    <script src="calc.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="Javascript/gates.js"></script>
+    <script src="Javascript/display.js"></script>
+    <script src="Javascript/calc.js"></script>
 </head>
 <body>
-    <h1>Logic Gates</h1>
-    <button onclick="drawAnd(input1(), input2(), andCalc());">And</button>
-    <button onclick="drawOr(input1(), input2(), orCalc(), true);">Or</button>
-    <button onclick="drawXor(input1(), input2(), xorCalc(), false);">Xor</button>
-    <button onclick="drawNot(input1(), notCalc());">Not</button>
-    <button onclick="drawNor(input1(), input2(), norCalc(), true);">Nor</button>
-    <button onclick="drawNand(input1(), input2(), nandCalc());">Nand</button>
-    <button onclick="drawXnor(input1(), input2(), xnorCalc());">Xnor</button>
-    <canvas id="gateCanvas" width="500" height="500"></canvas>
+    <img src="sources/logo.png" alt="logo" width="200px;" style="float:right; margin-right: 50px;">
+    <h1 style="margin-left: 30px;">Logic Gate Simulator</h1>
+    <p style="margin-left: 50px;">This is an app developed by Luke Weisenhorn to help students better visualize logic gates.
+        This application was primarily made in Javascript with HTML and CSS for the structure and style.
+    </p>
 
-    <label>Input 1: <select id="input1">
-        <option value="true">True</option>
-        <option value="false">False</option>
-    </select></label>
+    <canvas id="gateCanvas" width="400" height="400"></canvas>
     
-    <label>Input 2: <select id="input2">
-        <option value="true">True</option>
-        <option value="false">False</option>
-    </select></label>
+    <div id="controls" style="float: right; margin-right: 30vw; margin-top: 50px;">
+        <div id="inputs">
+            <h2>Please choose your inputs.</h2>
+            <h3><i>Note: For gates that only use 1 input, input 1 will be used.</i></h3>
+            <label>Input 1: <select id="input1" onchange="refresh();">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select></label>
+            
+            <label>Input 2: <select id="input2" onchange="refresh();">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select></label>
+        </div>
+        <div id="gateButtons">
+            <h2 id="gateTitle">Please Select the gate you would like to use</h2>
+            <button onclick="drawAnd(input1(), input2(), andCalc());">AND</button>
+            <button onclick="drawOr(input1(), input2(), orCalc(), true);">OR</button>
+            <button onclick="drawXor(input1(), input2(), xorCalc(), false);">XOR</button>
+            <button onclick="drawNot(input2(), notCalc());">NOT</button>
+            <button onclick="drawNor(input1(), input2(), norCalc(), true);">NOR</button>
+            <button onclick="drawNand(input1(), input2(), nandCalc());">NAND</button>
+            <button onclick="drawXnor(input1(), input2(), xnorCalc());">XNOR</button>
+        </div> 
+    </div>
+    
+
+    <p style="margin-left: 200px;" id="logicExpression">Logical Expression:</p>
+    <p style="margin-left: 200px;">Truth table:</p>
+    <table id="truthTable" style="margin-left: 200px;">
+        <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>Z (output)</th>
+        </tr>
+        <tr>
+            <td class="row" id="00input1">0</td>
+            <td class="row" id="00input2">0</td>
+            <td class="row" id="00output"></td>
+        </tr>
+        <tr>
+            <td class="row" id="01input1">0</td>
+            <td class="row" id="01input2">1</td>
+            <td class="row" id="01output"></td>
+        </tr>
+        <tr>
+            <td class="row" id="10input1">1</td>
+            <td class="row" id="10input2">0</td>
+            <td class="row" id="10output"></td>
+        </tr>
+        <tr>
+            <td class="row" id="11input1">1</td>
+            <td class="row" id="11input2">1</td>
+            <td class="row" id="11output"></td>
+        </tr>
+    </table>
+    <footer>
+        <p>Developed by Luke Weisenhorn</p>
+        <p>www.lukeweisenhorn.com</p>
+    </footer>
 </body>
 </html>

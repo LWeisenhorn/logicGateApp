@@ -21,7 +21,7 @@ function norCalc() {
     return output = nor(input1(), input2());
 }
 function notCalc() {
-    return output = nor(input1());
+    return output = not(input2());
 }
 function xorCalc() {
     return output = xor(input1(), input2());
