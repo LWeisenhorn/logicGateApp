@@ -1,9 +1,21 @@
 body {
     overflow: hidden;
+    background-color: rgb(249, 245, 236);
+    margin: 0;
 }
-
-#inputs, #gateButtons, #gateCanvas {
-    border: 1px solid blue;
+header {
+    background-color: #A38F7B;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin: 0;
+}
+header > h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#gateCanvas {
+    border: 1px solid black;
 }
 #inputs {
     margin-bottom: 20px;
@@ -11,6 +23,7 @@ body {
 #gateCanvas {
     margin-left: 10vw;
     margin-top: 50px;
+    background-color: #F3EBCB;
 }
 #controls > #inputs > h2, #controls > #gateButtons > h2 {
     font-size: 15px;
@@ -27,8 +40,15 @@ table, td, th {
     border:1px solid black;
     border-collapse: collapse;
 }
+td {
+    padding-right: 60px;
+}
+th {
+    padding-right: 10px;
+    padding-left: 10px;
+}
 button {
-    background-color: black;
+    background-color: #74A892;
     color: white;
     border: none;
     padding-top: 5px;
@@ -41,5 +61,5 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color:gainsboro;
+    background-color: #E5C185;
 }

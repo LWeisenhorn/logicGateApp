@@ -7,17 +7,22 @@
     <script src="Javascript/gates.js"></script>
     <script src="Javascript/display.js"></script>
     <script src="Javascript/calc.js"></script>
+    <script src="Javascript/button.js"></script>
 </head>
 <body>
-    <img src="sources/logo.png" alt="logo" width="200px;" style="float:right; margin-right: 50px;">
+    <header>
+       <img src="sources/logo.png" alt="logo" width="200px;" style="float:right; margin-right: 50px;; margin-top: 15px;">
     <h1 style="margin-left: 30px;">Logic Gate Simulator</h1>
     <p style="margin-left: 50px;">This is an app developed by Luke Weisenhorn to help students better visualize logic gates.
-        This application was primarily made in Javascript with HTML and CSS for the structure and style.
+        This application was primarily made in Javascript with HTML and CSS for the structure and style. 
     </p>
+    <p style="margin-left: 50px;">To begin select your inputs and choose a gate!</p> 
+    </header>
+    
 
     <canvas id="gateCanvas" width="400" height="400"></canvas>
     
-    <div id="controls" style="float: right; margin-right: 30vw; margin-top: 50px;">
+    <div id="controls" style="float: right; margin-right: 40vw; margin-top: 50px;">
         <div id="inputs">
             <h2>Please choose your inputs.</h2>
             <h3><i>Note: For gates that only use 1 input, input 1 will be used.</i></h3>
@@ -32,14 +37,15 @@
             </select></label>
         </div>
         <div id="gateButtons">
+            <!--Make Active button darken to #008585 -->
             <h2 id="gateTitle">Please Select the gate you would like to use</h2>
-            <button onclick="drawAnd(input1(), input2(), andCalc());">AND</button>
-            <button onclick="drawOr(input1(), input2(), orCalc(), true);">OR</button>
-            <button onclick="drawXor(input1(), input2(), xorCalc(), false);">XOR</button>
-            <button onclick="drawNot(input2(), notCalc());">NOT</button>
-            <button onclick="drawNor(input1(), input2(), norCalc(), true);">NOR</button>
-            <button onclick="drawNand(input1(), input2(), nandCalc());">NAND</button>
-            <button onclick="drawXnor(input1(), input2(), xnorCalc());">XNOR</button>
+            <button id="andButton" onclick="clickAnd()">AND</button>
+            <button id="orButton" onclick="clickOr()">OR</button>
+            <button id="xorButton" onclick="clickXor()">XOR</button>
+            <button id="notButton" onclick="clickNot()">NOT</button>
+            <button id="norButton" onclick="clickNor()">NOR</button>
+            <button id="nandButton" onclick="clickNand()">NAND</button>
+            <button id="xnorButton" onclick="clickXnor()">XNOR</button>
         </div> 
     </div>
     
@@ -53,24 +59,24 @@
             <th>Z (output)</th>
         </tr>
         <tr>
-            <td class="row" id="00input1">0</td>
-            <td class="row" id="00input2">0</td>
-            <td class="row" id="00output"></td>
+            <td class="row1" id="00input1">0</td>
+            <td class="row1" id="00input2">0</td>
+            <td class="row1" id="00output"></td>
         </tr>
         <tr>
-            <td class="row" id="01input1">0</td>
-            <td class="row" id="01input2">1</td>
-            <td class="row" id="01output"></td>
+            <td class="row2" id="01input1">0</td>
+            <td class="row2" id="01input2">1</td>
+            <td class="row2" id="01output"></td>
         </tr>
         <tr>
-            <td class="row" id="10input1">1</td>
-            <td class="row" id="10input2">0</td>
-            <td class="row" id="10output"></td>
+            <td class="row3" id="10input1">1</td>
+            <td class="row3" id="10input2">0</td>
+            <td class="row3" id="10output"></td>
         </tr>
         <tr>
-            <td class="row" id="11input1">1</td>
-            <td class="row" id="11input2">1</td>
-            <td class="row" id="11output"></td>
+            <td class="row4" id="11input1">1</td>
+            <td class="row4" id="11input2">1</td>
+            <td class="row4" id="11output"></td>
         </tr>
     </table>
     <footer>

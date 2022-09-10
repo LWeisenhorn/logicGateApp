@@ -1,5 +1,5 @@
-const active = "rgb(0, 255, 0)";
-const deactive = "rgb(255, 0, 0)";
+const active = "rgb(0, 133, 133)";
+const deactive = "rgb(199, 82, 42)";
 const unselected = "rgb(0, 0, 0)";
 let gateName = '';
 // draw gate functions
@@ -66,9 +66,9 @@ function drawOr(x, y, out, drawInputs) {
     }
 }
 function drawXor(x, y, out) {
-    gateName = 'XOR';
     clearCanvas();
-    drawOr(true, true, true);
+    drawOr(true, true, false);
+    gateName = 'XOR';
     document.getElementById("logicExpression").innerHTML = "Logical Expression: (xy' + x'y)";
     fillTruthTable(0, 1, 1, 0);
     selectRow(y, x);
@@ -122,6 +122,7 @@ function drawNot(x, out) {
         ctx.stroke();
         ctx.closePath();
     }
+    refresh();
 }
 function drawNor(x, y, out, drawInputs) {
     gateName = 'NOR';
@@ -182,9 +183,9 @@ function drawNand(x, y, out) {
     }
 }
 function drawXnor(x, y, out) {
-    gateName = 'XNOR';
     clearCanvas();
     drawNor(true, true, true);
+    gateName = 'XNOR';
     document.getElementById("logicExpression").innerHTML = "Logical Expression: (xy + x'y')";
     fillTruthTable(1, 0, 0, 1);
     selectRow(y, x);
@@ -309,27 +310,43 @@ function selectRow(input1, input2) {
     switch (true) {
         case input1 === "false" && input2 === "false":
             clearTable();
-            document.getElementById("00input1").style.background = 'red';
-            document.getElementById("00input2").style.background = 'red';
-            document.getElementById("00output").style.background = 'red';
+            document.getElementById("00input1").style.background = '#008585';
+            document.getElementById("00input2").style.background = '#008585';
+            document.getElementById("00output").style.background = '#008585';
+
+            document.getElementById("00input1").style.color = '#FFFFFF';
+            document.getElementById("00input2").style.color = '#FFFFFF';
+            document.getElementById("00output").style.color = '#FFFFFF';
             break;
         case input1 === "false" && input2 === "true":
             clearTable();
-            document.getElementById("01input1").style.background = 'red';
-            document.getElementById("01input2").style.background = 'red';
-            document.getElementById("01output").style.background = 'red';
+            document.getElementById("01input1").style.background = '#008585';
+            document.getElementById("01input2").style.background = '#008585';
+            document.getElementById("01output").style.background = '#008585';
+
+            document.getElementById("01input1").style.color = '#FFFFFF';
+            document.getElementById("01input2").style.color = '#FFFFFF';
+            document.getElementById("01output").style.color = '#FFFFFF';
             break;
         case input1 === "true" && input2 === "false":
             clearTable();
-            document.getElementById("10input1").style.background = 'red';
-            document.getElementById("10input2").style.background = 'red';
-            document.getElementById("10output").style.background = 'red';
+            document.getElementById("10input1").style.background = '#008585';
+            document.getElementById("10input2").style.background = '#008585';
+            document.getElementById("10output").style.background = '#008585';
+
+            document.getElementById("10input1").style.color = '#FFFFFF';
+            document.getElementById("10input2").style.color = '#FFFFFF';
+            document.getElementById("10output").style.color = '#FFFFFF';
             break;
         case input1 === "true" && input2 === "true":
             clearTable();
-            document.getElementById("11input1").style.background = 'red';
-            document.getElementById("11input2").style.background = 'red';
-            document.getElementById("11output").style.background = 'red';
+            document.getElementById("11input1").style.background = '#008585';
+            document.getElementById("11input2").style.background = '#008585';
+            document.getElementById("11output").style.background = '#008585';
+
+            document.getElementById("11input1").style.color = '#FFFFFF';
+            document.getElementById("11input2").style.color = '#FFFFFF';
+            document.getElementById("11output").style.color = '#FFFFFF';
             break;    
     }
 
@@ -348,12 +365,12 @@ function notTruthTable() {
 function notSelectRow(input1) {
     clearTable();
     if(input1 == 'false') {
-        document.getElementById("00input1").style.background = 'red';
-        document.getElementById("00output").style.background = 'red';
+        document.getElementById("00input1").style.background = '#008585';
+        document.getElementById("00output").style.background = '#008585';
     }
     if(input1 == 'true') {
-        document.getElementById("10input1").style.background = 'red';
-        document.getElementById("10output").style.background = 'red';
+        document.getElementById("10input1").style.background = '#008585';
+        document.getElementById("10output").style.background = '#008585';
     }
 }
 function resetTruthTable() {
